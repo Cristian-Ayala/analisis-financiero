@@ -1,3 +1,25 @@
 input[type="number"] {
     -moz-appearance: textfield;
 }
+
+.card-body-izq{
+    display: inline-block;
+}
+
+.card-body-der{
+    display: inline-block;
+    align-self: center;
+}
+
+table td{
+    text-align: center;
+}
+
+tbody tr{
+    text-align: left;
+}
+
+thead{
+    color: white;
+    background-color: black;
+}

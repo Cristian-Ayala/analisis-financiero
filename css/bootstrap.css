@@ -4440,6 +4440,7 @@ tbody.collapse.show {
   background-clip: border-box;
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
+  box-shadow: 0 0 1px 0 rgb(37 108 239 / 60%), 0 6px 12px 0 rgb(0 0 0 / 41%);
 }
 
 .card > hr {
@@ -4462,6 +4463,8 @@ tbody.collapse.show {
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   padding: 1.25rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .card-title {
@@ -6076,6 +6079,8 @@ button.close {
 
 .bg-primary {
   background-color: #007bff !important;
+  background-image: linear-gradient(135deg, #7dadcc 0%, #afb0bd 100%);
+  border: none;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
