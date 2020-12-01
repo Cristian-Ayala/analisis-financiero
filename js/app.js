@@ -216,8 +216,8 @@ new Vue({
         parseInt(balanceGral.otrosPasivos);
 
       let totalPasivos =
-        totalPasivosFijos +
-        totalPasivosCorrientes;
+        parseInt(totalPasivosFijos) +
+        parseInt(totalPasivosCorrientes);
 
       let participacionControladora =
         parseInt(balanceGral.accionesComunes) +
@@ -230,7 +230,7 @@ new Vue({
 
       let capitalContable =
         parseInt(balanceGral.participacionNOControladora) +
-        participacionControladora;
+        parseInt(participacionControladora);
 
       let totalPasivoCapitalContable =
         parseInt(totalPasivos) + parseInt(capitalContable);
@@ -282,7 +282,8 @@ new Vue({
           totalPasivosFijos,
           totalPasivos,
           capitalContable,
-          totalPasivoCapitalContable
+          totalPasivoCapitalContable,
+          participacionControladora
         },
 
         razones: {
