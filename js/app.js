@@ -176,7 +176,6 @@ new Vue({
 
       let totalActivosCorrientes =
         parseInt(balanceGral.efectivoYEquivalentes) +
-        parseInt(balanceGral.efectivoYEquivalentes) +
         parseInt(balanceGral.cuentasPorCobrar) +
         parseInt(balanceGral.inventarios) +
         parseInt(balanceGral.pagosAnticipados) +
@@ -273,9 +272,9 @@ new Vue({
         },
 
         balanceGral: {
-          efectivoEInversionesCortoPlazo,
+          
           totalActivosCorrientes,
-          propiedadPlantaYEquipoNeto,
+          
           totalActivosFijos,
           totalActivos,
           totalPasivosCorrientes,
@@ -330,7 +329,6 @@ new Vue({
 
       let totalActivosCorrientes =
         parseInt(balanceGral.efectivoYEquivalentes) +
-        parseInt(balanceGral.efectivoYEquivalentes) +
         parseInt(balanceGral.cuentasPorCobrar) +
         parseInt(balanceGral.inventarios) +
         parseInt(balanceGral.pagosAnticipados) +
@@ -373,7 +371,7 @@ new Vue({
         parseInt(balanceGral.otrosPasivos);
 
       let totalPasivos =
-        totalActivosFijos +
+        totalPasivosFijos +
         totalPasivosCorrientes;
 
       let participacionControladora =
@@ -431,16 +429,17 @@ new Vue({
         },
 
         balanceGral: {
-          efectivoEInversionesCortoPlazo,
+          
           totalActivosCorrientes,
-          propiedadPlantaYEquipoNeto,
+          
           totalActivosFijos,
           totalActivos,
           totalPasivosCorrientes,
           totalPasivosFijos,
           totalPasivos,
           capitalContable,
-          totalPasivoCapitalContable
+          totalPasivoCapitalContable,
+          participacionControladora
         },
 
         razones: {
