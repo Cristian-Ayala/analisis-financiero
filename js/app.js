@@ -4,7 +4,7 @@ new Vue({
 
   data: () => ({
     year1: {
-      year: 2017,
+      year: 2018,
 
       ER: {
         ingresos: 229234,
@@ -22,36 +22,57 @@ new Vue({
       },
 
       balanceGral: {
-        efectivo: 7982,
-        efectivoYEquivalentes: 12307,
-        inversionesCortoPlazo: 53892,
-        cuentasPorCobrar: 35673,
-        inventarios: 4855,
-        otrosActivosCorrientes: 13936,
+        //Cuentas de activos Corriente
+        efectivoYEquivalentes: 7584,
+        cuentasPorCobrar: 25950,
+        inventarios: 9340,
+        pagosAnticipados: 1098,
+        instrumentosFinancieros: 106,
+        depositosEnCuentas: 619,
+        activosClasificadosMantenidos: 154,
 
-        inmueblesMobiliarioYEquipo: 75076,
-        depreciacionAcumuladaInmueblesMobiliarioYEquipo: 41293,
-        inversionesPermanentes: 194714,
-        otrosActivosPermanentes: 18177,
+        //Cuentas de Activo no corriente
+        propiedadPlantaYEquipo: 87243,
+        activosPorDerechodeUso: 0,
+        inversionEnAsociadas: 2645,
+        instrumentosFinancierosDerivados: 3017,
+        impuestosaLaUtilidad: 3886,
+        activosIntagibles: 54476,
+        creditoMercantil: 65513,
+        otrosActivos: 1685,
 
-        cuentasPorPagar: 44242,
-        docsPorPagar: 11977,
-        deudasEntidadesCredito: 6496,
-        otrasCuentasPorPagar: 38099,
+        //cuentas de pasivo
+        PorcionACortoPlazo: 1153,
+        cuentasPorPagar: 21074,
+        otrasCuentasPorPagar: 23055,
+        pasivosPorArrendamiento: 0,
+        cuentasPorPagaraPartesRelacionadas: 909,
+        impuestoSobreLaRenta: 256,
+        participaciónDeLosTrabajadoresEnLasUtilidades: 1423,
+        instrumentosFinancierosDerivadosP: 879,
 
-        deudaLargoPlazo: 97207,
-        impuestoDiferidoGanancias: 31504,
-        otrosPasivos: 11747,
+        //Cuentas de pasivo no corriente
+        deudaLargoPlazo: 88693,
+        pasivosPorArrendamientoNC: 0,
+        instrumentosFinancierosDerivadosNC: 347,
+        beneficioEmpleados: 25885,
+        impuestoDiferidoGanancias: 5720,
+        otrosPasivos: 9347,
 
-        accionesComunes: 35867,
-        resultadoEjercicioAnterior: 98330,
-        gananciaNoRealizada: -124,
-        otrasParticipaciones: 26
+        //Cuentas de Capital
+        accionesComunes: 4199,
+        utilidadesRetenidas: 59238,
+        otroInstrumentoFinancierodeCapital: 9138,
+        efectoAcumuladodeConversiondeOperacionesExtranjeras: 4739,
+        utilidadesActuariales: 3131,
+        valuaciondeInstrumentos: -386,
+        utilidadesPorRealizar: -369,
+        participacionNOControladora: 4885
       }
     },
 
     year2: {
-      year: 2018,
+      year: 2019,
 
       ER: {
         ingresos: 265595,
@@ -69,31 +90,52 @@ new Vue({
       },
 
       balanceGral: {
-        efectivo: 11575,
-        efectivoYEquivalentes: 14338,
-        inversionesCortoPlazo: 40388,
-        cuentasPorCobrar: 48995,
-        inventarios: 3956,
-        otrosActivosCorrientes: 12087,
+        // Cuentas de activo corriente
+        efectivoYEquivalentes: 6251,
+        cuentasPorCobrar: 26198,
+        inventarios: 9819,
+        pagosAnticipados: 1188,
+        instrumentosFinancieros: 143,
+        depositosEnCuentas: 325,
+        activosClasificadosMantenidos: 273,
 
-        inmueblesMobiliarioYEquipo: 90403,
-        depreciacionAcumuladaInmueblesMobiliarioYEquipo: 49099,
-        inversionesPermanentes: 170799,
-        otrosActivosPermanentes: 22283,
+        //Cuentas de Activo no corriente
+        propiedadPlantaYEquipo: 84341,
+        activosPorDerechodeUso: 25550,
+        inversionEnAsociadas: 2871,
+        instrumentosFinancierosDerivados: 1533,
+        impuestosaLaUtilidad: 4590,
+        activosIntagibles: 51318,
+        creditoMercantil: 62794,
+        otrosActivos: 1887,
 
-        cuentasPorPagar: 55888,
-        docsPorPagar: 11964,
-        deudasEntidadesCredito: 8784,
-        otrasCuentasPorPagar: 40230,
+        //Cuentas de Pasivo corriente
+        PorcionACortoPlazo: 5408,
+        cuentasPorPagar: 23105,
+        otrasCuentasPorPagar: 18473,
+        pasivosPorArrendamiento: 4599,
+        cuentasPorPagaraPartesRelacionadas: 1064,
+        impuestoSobreLaRenta: 115,
+        participaciónDeLosTrabajadoresEnLasUtilidades: 1183,
+        instrumentosFinancierosDerivadosP: 673,
 
-        deudaLargoPlazo: 93735,
-        impuestoDiferidoGanancias: 426,
-        otrosPasivos: 47551,
+        //Pasivo no Corriente
+        deudaLargoPlazo: 81264,
+        pasivosPorArrendamientoNC: 20741,
+        instrumentosFinancierosDerivadosNC: 437,
+        beneficioEmpleados: 30426,
+        impuestoDiferidoGanancias: 5241,
+        otrosPasivos: 8041,
 
-        accionesComunes: 40201,
-        resultadoEjercicioAnterior: 70400,
-        gananciaNoRealizada: 810,
-        otrasParticipaciones: 4264
+        //Cuentas de Capital
+        accionesComunes: 4156,
+        utilidadesRetenidas: 61332,
+        otroInstrumentoFinancierodeCapital: 8931,
+        efectoAcumuladodeConversiondeOperacionesExtranjeras: 1247,
+        utilidadesActuariales: -226,
+        valuaciondeInstrumentos: -422,
+        utilidadesPorRealizar: -1282,
+        participacionNOControladora: 4575
       }
     }
   }),
@@ -131,43 +173,69 @@ new Vue({
       //calculos de balance general
       let balanceGral = this.year1.balanceGral;
 
-      let efectivoEInversionesCortoPlazo =
-        parseInt(balanceGral.efectivo) +
-        parseInt(balanceGral.efectivoYEquivalentes) +
-        parseInt(balanceGral.inversionesCortoPlazo);
+
       let totalActivosCorrientes =
+        parseInt(balanceGral.efectivoYEquivalentes) +
+        parseInt(balanceGral.efectivoYEquivalentes) +
         parseInt(balanceGral.cuentasPorCobrar) +
         parseInt(balanceGral.inventarios) +
-        parseInt(balanceGral.otrosActivosCorrientes) +
-        parseInt(efectivoEInversionesCortoPlazo);
-      let inmueblesMobiliarioYEquipoNeto =
-       parseInt (balanceGral.inmueblesMobiliarioYEquipo);
+        parseInt(balanceGral.pagosAnticipados) +
+        parseInt(balanceGral.instrumentosFinancieros) +
+        parseInt(balanceGral.depositosEnCuentas) +
+        parseInt(balanceGral.activosClasificadosMantenidos);
+      //let totalActivosNoCorrientes
+      let totalActivosFijos = parseInt(balanceGral.propiedadPlantaYEquipo) +
+        parseInt(balanceGral.activosPorDerechodeUso) +
+        parseInt(balanceGral.inversionEnAsociadas) +
+        parseInt(balanceGral.instrumentosFinancierosDerivados) +
+        parseInt(balanceGral.impuestosaLaUtilidad) +
+        parseInt(balanceGral.activosIntagibles) +
+        parseInt(balanceGral.creditoMercantil) +
+        parseInt(balanceGral.otrosActivos);
+      //total de Activos
       let totalActivos =
         parseInt(totalActivosCorrientes) +
-        parseInt(inmueblesMobiliarioYEquipoNeto) +
-        parseInt(balanceGral.inversionesPermanentes) +
-        parseInt(balanceGral.otrosActivosPermanentes);
+        parseInt(totalActivosFijos);
 
       let totalPasivosCorrientes =
+        parseInt(balanceGral.PorcionACortoPlazo) +
         parseInt(balanceGral.cuentasPorPagar) +
-        parseInt(balanceGral.docsPorPagar) +
-        parseInt(balanceGral.deudasEntidadesCredito) +
-        parseInt(balanceGral.otrasCuentasPorPagar);
+        parseInt(balanceGral.otrasCuentasPorPagar) +
+        parseInt(balanceGral.pasivosPorArrendamiento) +
+        parseInt(balanceGral.cuentasPorPagaraPartesRelacionadas) +
+        parseInt(balanceGral.impuestoSobreLaRenta) +
+        parseInt(balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades) +
+        parseInt(balanceGral.instrumentosFinancierosDerivadosP);
+
+      //let totalPasivosNoCorrientes = ;
+      let totalPasivosFijos = parseInt(balanceGral.deudaLargoPlazo) +
+        parseInt(balanceGral.pasivosPorArrendamientoNC) +
+        parseInt(balanceGral.instrumentosFinancierosDerivadosNC) +
+        parseInt(balanceGral.beneficioEmpleados) +
+        parseInt(balanceGral.impuestoDiferidoGanancias) +
+        parseInt(balanceGral.otrosPasivos);
 
       let totalPasivos =
-        parseInt(balanceGral.deudaLargoPlazo) +
-        parseInt(balanceGral.impuestoDiferidoGanancias) +
-        parseInt(balanceGral.otrosPasivos) +
+        totalPasivosFijos +
         totalPasivosCorrientes;
-      let capitalContable =
+
+      let participacionControladora =
         parseInt(balanceGral.accionesComunes) +
-        parseInt(balanceGral.resultadoEjercicioAnterior) +
-        parseInt(balanceGral.gananciaNoRealizada) -
-        balanceGral.otrasParticipaciones;
+        parseInt(balanceGral.utilidadesRetenidas) +
+        parseInt(balanceGral.otroInstrumentoFinancierodeCapital) +
+        parseInt(balanceGral.efectoAcumuladodeConversiondeOperacionesExtranjeras) +
+        parseInt(balanceGral.utilidadesActuariales) +
+        parseInt(balanceGral.valuaciondeInstrumentos) +
+        parseInt(balanceGral.utilidadesPorRealizar);
+
+      let capitalContable =
+        parseInt(balanceGral.participacionNOControladora) +
+        participacionControladora;
+
       let totalPasivoCapitalContable =
         parseInt(totalPasivos) + parseInt(capitalContable);
-      let totalActivosFijos = totalActivos - totalActivosCorrientes;
-      let totalPasivosFijos = totalPasivos - totalPasivosCorrientes;
+
+
 
       //calculos de razones financieras
       //razones de liquidez
@@ -188,9 +256,7 @@ new Vue({
       let margenUtilidadBruta = (beneficioBruto / ER.ingresos).toFixed(2);
       let margenUtilidadOperativa = (resultadoExplotacion / ER.ingresos).toFixed(2);
 
-      let margenUtilidadNeta = (resultadoAtribuidoGrupo / ER.ingresos).toFixed(
-        2
-      );
+      let margenUtilidadNeta = (resultadoAtribuidoGrupo / ER.ingresos).toFixed(2);
       let rsa = (margenUtilidadNeta * rotacionActivosTotales).toFixed(2); //rendimiento sobre activos totales
       let maf = (totalActivos / balanceGral.accionesComunes).toFixed(2); //multiplicador de apalancamiento financiero
       let rsp = (maf * rsa).toFixed(2); //rendimiento sobre patrimonio
@@ -209,7 +275,7 @@ new Vue({
         balanceGral: {
           efectivoEInversionesCortoPlazo,
           totalActivosCorrientes,
-          inmueblesMobiliarioYEquipoNeto,
+          propiedadPlantaYEquipoNeto,
           totalActivosFijos,
           totalActivos,
           totalPasivosCorrientes,
@@ -260,44 +326,71 @@ new Vue({
       //calculos de balance general
       let balanceGral = this.year2.balanceGral;
 
-      let efectivoEInversionesCortoPlazo =
-        parseInt(balanceGral.efectivo) +
-        parseInt(balanceGral.efectivoYEquivalentes) +
-        parseInt(balanceGral.inversionesCortoPlazo);
+
       let totalActivosCorrientes =
+        parseInt(balanceGral.efectivoYEquivalentes) +
+        parseInt(balanceGral.efectivoYEquivalentes) +
         parseInt(balanceGral.cuentasPorCobrar) +
         parseInt(balanceGral.inventarios) +
-        parseInt(balanceGral.otrosActivosCorrientes) +
-        parseInt(efectivoEInversionesCortoPlazo);
-      let inmueblesMobiliarioYEquipoNeto =
-        balanceGral.inmueblesMobiliarioYEquipo -
-        balanceGral.depreciacionAcumuladaInmueblesMobiliarioYEquipo;
+        parseInt(balanceGral.pagosAnticipados) +
+        parseInt(balanceGral.instrumentosFinancieros) +
+        parseInt(balanceGral.depositosEnCuentas) +
+        parseInt(balanceGral.activosClasificadosMantenidos);
+      //let totalActivosNoCorrientes
+      let totalActivosFijos = 
+        parseInt(balanceGral.propiedadPlantaYEquipo) +
+        parseInt(balanceGral.activosPorDerechodeUso) +
+        parseInt(balanceGral.inversionEnAsociadas) +
+        parseInt(balanceGral.instrumentosFinancierosDerivados) +
+        parseInt(balanceGral.impuestosaLaUtilidad) +
+        parseInt(balanceGral.activosIntagibles) +
+        parseInt(balanceGral.creditoMercantil) +
+        parseInt(balanceGral.otrosActivos);
+
+      //total de Activos
       let totalActivos =
         parseInt(totalActivosCorrientes) +
-        parseInt(inmueblesMobiliarioYEquipoNeto) +
-        parseInt(balanceGral.inversionesPermanentes) +
-        parseInt(balanceGral.otrosActivosPermanentes);
+        parseInt(totalActivosFijos);
 
       let totalPasivosCorrientes =
+        parseInt(balanceGral.PorcionACortoPlazo) +
         parseInt(balanceGral.cuentasPorPagar) +
-        parseInt(balanceGral.docsPorPagar) +
-        parseInt(balanceGral.deudasEntidadesCredito) +
-        parseInt(balanceGral.otrasCuentasPorPagar);
+        parseInt(balanceGral.otrasCuentasPorPagar) +
+        parseInt(balanceGral.pasivosPorArrendamiento) +
+        parseInt(balanceGral.cuentasPorPagaraPartesRelacionadas) +
+        parseInt(balanceGral.impuestoSobreLaRenta) +
+        parseInt(balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades) +
+        parseInt(balanceGral.instrumentosFinancierosDerivadosP);
+
+      //let totalPasivosNoCorrientes = ;
+      let totalPasivosFijos = 
+        parseInt(balanceGral.deudaLargoPlazo) +
+        parseInt(balanceGral.pasivosPorArrendamientoNC) +
+        parseInt(balanceGral.instrumentosFinancierosDerivadosNC) +
+        parseInt(balanceGral.beneficioEmpleados) +
+        parseInt(balanceGral.impuestoDiferidoGanancias) +
+        parseInt(balanceGral.otrosPasivos);
 
       let totalPasivos =
-        parseInt(balanceGral.deudaLargoPlazo) +
-        parseInt(balanceGral.impuestoDiferidoGanancias) +
-        parseInt(balanceGral.otrosPasivos) +
+        totalActivosFijos +
         totalPasivosCorrientes;
-      let capitalContable =
+
+      let participacionControladora =
         parseInt(balanceGral.accionesComunes) +
-        parseInt(balanceGral.resultadoEjercicioAnterior) +
-        parseInt(balanceGral.gananciaNoRealizada) -
-        balanceGral.otrasParticipaciones;
+        parseInt(balanceGral.utilidadesRetenidas) +
+        parseInt(balanceGral.otroInstrumentoFinancierodeCapital) +
+        parseInt(balanceGral.efectoAcumuladodeConversiondeOperacionesExtranjeras) +
+        parseInt(balanceGral.utilidadesActuariales) +
+        parseInt(balanceGral.valuaciondeInstrumentos) +
+        parseInt(balanceGral.utilidadesPorRealizar);
+
+      let capitalContable =
+        parseInt(balanceGral.participacionNOControladora) +
+        participacionControladora;
+
       let totalPasivoCapitalContable =
         parseInt(totalPasivos) + parseInt(capitalContable);
-      let totalActivosFijos = totalActivos - totalActivosCorrientes;
-      let totalPasivosFijos = totalPasivos - totalPasivosCorrientes;
+
 
       //calculos de razones financieras
       //razones de liquidez
@@ -339,7 +432,7 @@ new Vue({
         balanceGral: {
           efectivoEInversionesCortoPlazo,
           totalActivosCorrientes,
-          inmueblesMobiliarioYEquipoNeto,
+          propiedadPlantaYEquipoNeto,
           totalActivosFijos,
           totalActivos,
           totalPasivosCorrientes,

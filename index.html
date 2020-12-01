@@ -47,15 +47,6 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <th>Efectivo</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.efectivo"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.efectivo, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.efectivo"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.efectivo, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.efectivo - year1.balanceGral.efectivo }}</td>
-                          <td>{{ ((year2.balanceGral.efectivo - year1.balanceGral.efectivo) / year1.balanceGral.efectivo * 100).toFixed(2) }} %</td>
-                        </tr>
-                        <tr>
                           <th>Efectivo y equivalentes de efectivo</th>
                           <td><input type="text" size="6" v-model="year1.balanceGral.efectivoYEquivalentes"></td>
                           <td>{{ analisisVertical(year1.balanceGral.efectivoYEquivalentes, computedYear1.balanceGral.totalActivos) }} % </td>
@@ -64,6 +55,7 @@
                           <td>{{ year2.balanceGral.efectivoYEquivalentes - year1.balanceGral.efectivoYEquivalentes }}</td>
                           <td>{{ ((year2.balanceGral.efectivoYEquivalentes - year1.balanceGral.efectivoYEquivalentes) / year1.balanceGral.efectivoYEquivalentes * 100).toFixed(2) }} %</td>
                         </tr>
+                        
                         <tr>
                           <th>Inversiones a corto plazo</th>
                           <td><input type="text" size="6" v-model="year1.balanceGral.inversionesCortoPlazo"></td>
@@ -73,15 +65,7 @@
                           <td>{{ year2.balanceGral.inversionesCortoPlazo - year1.balanceGral.inversionesCortoPlazo }}</td>
                           <td>{{ ((year2.balanceGral.inversionesCortoPlazo - year1.balanceGral.inversionesCortoPlazo) / year1.balanceGral.inversionesCortoPlazo * 100).toFixed(2) }} %</td>
                         </tr>
-                        <tr class="table-secondary text-dark">
-                          <th>Efectivo e inversiones a corto plazo</th>
-                          <td>{{ computedYear1.balanceGral.efectivoEInversionesCortoPlazo }}</td>
-                          <td>{{ analisisVertical(computedYear1.balanceGral.efectivoEInversionesCortoPlazo, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td>{{ computedYear2.balanceGral.efectivoEInversionesCortoPlazo }}</td>
-                          <td>{{ analisisVertical(computedYear2.balanceGral.efectivoEInversionesCortoPlazo, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ computedYear2.balanceGral.efectivoEInversionesCortoPlazo - computedYear1.balanceGral.efectivoEInversionesCortoPlazo }}</td>
-                          <td>{{ ((computedYear2.balanceGral.efectivoEInversionesCortoPlazo - computedYear1.balanceGral.efectivoEInversionesCortoPlazo) / computedYear1.balanceGral.efectivoEInversionesCortoPlazo * 100).toFixed(2) }} %</td>
-                        </tr>
+                        
                         <tr>
                           <th>Cuentas por cobrar</th>
                           <td><input type="text" size="6" v-model="year1.balanceGral.cuentasPorCobrar"></td>
@@ -109,6 +93,7 @@
                           <td>{{ year2.balanceGral.otrosActivosCorrientes - year1.balanceGral.otrosActivosCorrientes }}</td>
                           <td>{{ ((year2.balanceGral.otrosActivosCorrientes - year1.balanceGral.otrosActivosCorrientes) / year1.balanceGral.otrosActivosCorrientes * 100).toFixed(2) }} %</td>
                         </tr>
+                        <!-- TOTAL DE ACTIVOS CORRIENTES -->
                         <tr class="table-warning text-dark">
                           <th>Total de activos corrientes</th>
                           <td>{{ computedYear1.balanceGral.totalActivosCorrientes }}</td>
