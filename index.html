@@ -55,19 +55,8 @@
                           <td>{{ year2.balanceGral.efectivoYEquivalentes - year1.balanceGral.efectivoYEquivalentes }}</td>
                           <td>{{ ((year2.balanceGral.efectivoYEquivalentes - year1.balanceGral.efectivoYEquivalentes) / year1.balanceGral.efectivoYEquivalentes * 100).toFixed(2) }} %</td>
                         </tr>
-                        
                         <tr>
-                          <th>Inversiones a corto plazo</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.inversionesCortoPlazo"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.inversionesCortoPlazo, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.inversionesCortoPlazo"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.inversionesCortoPlazo, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.inversionesCortoPlazo - year1.balanceGral.inversionesCortoPlazo }}</td>
-                          <td>{{ ((year2.balanceGral.inversionesCortoPlazo - year1.balanceGral.inversionesCortoPlazo) / year1.balanceGral.inversionesCortoPlazo * 100).toFixed(2) }} %</td>
-                        </tr>
-                        
-                        <tr>
-                          <th>Cuentas por cobrar</th>
+                          <th>Cuentas por cobrar a clientes</th>
                           <td><input type="text" size="6" v-model="year1.balanceGral.cuentasPorCobrar"></td>
                           <td>{{ analisisVertical(year1.balanceGral.cuentasPorCobrar, computedYear1.balanceGral.totalActivos) }} % </td>
                           <td><input type="text" size="6" v-model="year2.balanceGral.cuentasPorCobrar"></td>
@@ -85,13 +74,40 @@
                           <td>{{ ((year2.balanceGral.inventarios - year1.balanceGral.inventarios) / year1.balanceGral.inventarios * 100).toFixed(2) }} %</td>
                         </tr>
                         <tr>
-                          <th>Otros activos corrientes</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.otrosActivosCorrientes"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.otrosActivosCorrientes, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.otrosActivosCorrientes"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.otrosActivosCorrientes, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.otrosActivosCorrientes - year1.balanceGral.otrosActivosCorrientes }}</td>
-                          <td>{{ ((year2.balanceGral.otrosActivosCorrientes - year1.balanceGral.otrosActivosCorrientes) / year1.balanceGral.otrosActivosCorrientes * 100).toFixed(2) }} %</td>
+                          <th>Pagos Anticipados</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.pagosAnticipados"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.pagosAnticipados, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.pagosAnticipados"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.pagosAnticipados, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.pagosAnticipados - year1.balanceGral.pagosAnticipados }}</td>
+                          <td>{{ ((year2.balanceGral.pagosAnticipados - year1.balanceGral.pagosAnticipados) / year1.balanceGral.pagosAnticipados * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Instrumentos Financieros derivados</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.instrumentosFinancieros"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.instrumentosFinancieros, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.instrumentosFinancieros"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.instrumentosFinancieros, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.instrumentosFinancieros - year1.balanceGral.instrumentosFinancieros }}</td>
+                          <td>{{ ((year2.balanceGral.instrumentosFinancieros - year1.balanceGral.instrumentosFinancieros) / year1.balanceGral.instrumentosFinancieros * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Deposito en cuentas de garantia de instrumentos</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.depositosEnCuentas"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.depositosEnCuentas, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.depositosEnCuentas"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.depositosEnCuentas, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.depositosEnCuentas - year1.balanceGral.depositosEnCuentas }}</td>
+                          <td>{{ ((year2.balanceGral.depositosEnCuentas - year1.balanceGral.depositosEnCuentas) / year1.balanceGral.depositosEnCuentas * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Activos clasificados como mantenidos para su venta</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.activosClasificadosMantenidos"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.activosClasificadosMantenidos, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.activosClasificadosMantenidos"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.activosClasificadosMantenidos, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.activosClasificadosMantenidos - year1.balanceGral.activosClasificadosMantenidos}}</td>
+                          <td>{{ ((year2.balanceGral.activosClasificadosMantenidos - year1.balanceGral.activosClasificadosMantenidos) / year1.balanceGral.activosClasificadosMantenidos * 100).toFixed(2) }} %</td>
                         </tr>
                         <!-- TOTAL DE ACTIVOS CORRIENTES -->
                         <tr class="table-warning text-dark">
@@ -104,41 +120,94 @@
                           <td>{{ ((computedYear2.balanceGral.totalActivosCorrientes - computedYear1.balanceGral.totalActivosCorrientes) / computedYear1.balanceGral.totalActivosCorrientes * 100).toFixed(2) }} %</td>
                         </tr>
                         <tr>
-                          <th>Inmuebles, mobiliario y equipo</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.inmueblesMobiliarioYEquipo"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.inmueblesMobiliarioYEquipo, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.inmueblesMobiliarioYEquipo"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.inmueblesMobiliarioYEquipo, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.inmueblesMobiliarioYEquipo - year1.balanceGral.inmueblesMobiliarioYEquipo }}</td>
-                          <td>{{ ((year2.balanceGral.inmueblesMobiliarioYEquipo - year1.balanceGral.inmueblesMobiliarioYEquipo) / year1.balanceGral.inmueblesMobiliarioYEquipo * 100).toFixed(2) }} %</td>
-                        </tr>
-                        
-                        <tr>
-                          <th>Inversiones permanentes</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.inversionesPermanentes"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.inversionesPermanentes, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.inversionesPermanentes"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.inversionesPermanentes, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.inversionesPermanentes - year1.balanceGral.inversionesPermanentes }}</td>
-                          <td>{{ ((year2.balanceGral.inversionesPermanentes - year1.balanceGral.inversionesPermanentes) / year1.balanceGral.inversionesPermanentes * 100).toFixed(2) }} %</td>
+                          <th>Propiedades, planta y equipo</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.propiedadPlantaYEquipo"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.propiedadPlantaYEquipo, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.propiedadPlantaYEquipo"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.propiedadPlantaYEquipo, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.propiedadPlantaYEquipo - year1.balanceGral.propiedadPlantaYEquipo }}</td>
+                          <td>{{ ((year2.balanceGral.propiedadPlantaYEquipo - year1.balanceGral.propiedadPlantaYEquipo) / year1.balanceGral.propiedadPlantaYEquipo * 100).toFixed(2) }} %</td>
                         </tr>
                         <tr>
-                          <th>Otros activos permanentes</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.otrosActivosPermanentes"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.otrosActivosPermanentes, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.otrosActivosPermanentes"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.otrosActivosPermanentes, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.otrosActivosPermanentes - year1.balanceGral.otrosActivosPermanentes }}</td>
-                          <td>{{ ((year2.balanceGral.otrosActivosPermanentes - year1.balanceGral.otrosActivosPermanentes) / year1.balanceGral.otrosActivosPermanentes * 100).toFixed(2) }} %</td>
+                          <th>Activos por derecho de uso</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.activosPorDerechodeUso"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.activosPorDerechodeUso, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.activosPorDerechodeUso"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.activosPorDerechodeUso, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.activosPorDerechodeUso - year1.balanceGral.activosPorDerechodeUso}}</td>
+                          <td>{{ ((year2.balanceGral.activosPorDerechodeUso - year1.balanceGral.activosPorDerechodeUso) / year1.balanceGral.activosPorDerechodeUso * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Inversiones en asociadas</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.inversionEnAsociadas"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.inversionEnAsociadas, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.inversionEnAsociadas"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.inversionEnAsociadas, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.inversionEnAsociadas - year1.balanceGral.inversionEnAsociadas }}</td>
+                          <td>{{ ((year2.balanceGral.inversionEnAsociadas - year1.balanceGral.inversionEnAsociadas) / year1.balanceGral.inversionEnAsociadas * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Instrumentos financieros derivados</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.instrumentosFinancierosDerivados"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.instrumentosFinancierosDerivados, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.instrumentosFinancierosDerivados"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.instrumentosFinancierosDerivados, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.instrumentosFinancierosDerivados - year1.balanceGral.instrumentosFinancierosDerivados }}</td>
+                          <td>{{ ((year2.balanceGral.instrumentosFinancierosDerivados - year1.balanceGral.instrumentosFinancierosDerivados) / year1.balanceGral.instrumentosFinancierosDerivados * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Impuesto a la utilidad diferidos</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.impuestosaLaUtilidad"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.impuestosaLaUtilidad, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.impuestosaLaUtilidad"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.impuestosaLaUtilidad, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.impuestosaLaUtilidad - year1.balanceGral.impuestosaLaUtilidad}}</td>
+                          <td>{{ ((year2.balanceGral.impuestosaLaUtilidad - year1.balanceGral.impuestosaLaUtilidad) / year1.balanceGral.impuestosaLaUtilidad * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Activos Intagibles</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.activosIntagibles"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.activosIntagibles, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.activosIntagibles"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.activosIntagibles, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.activosIntagibles - year1.balanceGral.activosIntagibles }}</td>
+                          <td>{{ ((year2.balanceGral.activosIntagibles - year1.balanceGral.activosIntagibles) / year1.balanceGral.activosIntagibles * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Credito Mercantil</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.creditoMercantil"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.creditoMercantil, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.creditoMercantil"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.creditoMercantil, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.creditoMercantil - year1.balanceGral.creditoMercantil}}</td>
+                          <td>{{ ((year2.balanceGral.creditoMercantil - year1.balanceGral.creditoMercantil) / year1.balanceGral.creditoMercantil * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Otros activos, neto</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.otrosActivos"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.otrosActivos, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.otrosActivos"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.otrosActivos, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.otrosActivos - year1.balanceGral.otrosActivos}}</td>
+                          <td>{{ ((year2.balanceGral.otrosActivos - year1.balanceGral.otrosActivos) / year1.balanceGral.otrosActivos * 100).toFixed(2) }} %</td>
                         </tr>
                         <tr class="table-danger text-dark">
                           <th>Total activos</th>
                           <td>{{ computedYear1.balanceGral.totalActivos }}</td>
-                          <td></td>
+                          <td>{{ analisisVertical(year1.balanceGral.totalActivos, computedYear1.balanceGral.totalActivos) }} % </td>
                           <td>{{ computedYear2.balanceGral.totalActivos }}</td>
-                          <td></td>
+                          <td>{{ analisisVertical(year2.balanceGral.totalActivos, computedYear1.balanceGral.totalActivos) }} % </td>
                           <td>{{ computedYear2.balanceGral.totalActivos - computedYear1.balanceGral.totalActivos }}</td>
                           <td>{{ ((computedYear2.balanceGral.totalActivos - computedYear1.balanceGral.totalActivos) / computedYear1.balanceGral.totalActivos * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Porcion a corto plazo de la deuda a largo plazo</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.PorcionACortoPlazo"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.PorcionACortoPlazo, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.PorcionACortoPlazo"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.PorcionACortoPlazo, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.PorcionACortoPlazo - year1.balanceGral.PorcionACortoPlazo}}</td>
+                          <td>{{ ((year2.balanceGral.PorcionACortoPlazo - year1.balanceGral.PorcionACortoPlazo) / year1.balanceGral.PorcionACortoPlazo * 100).toFixed(2) }} %</td>
                         </tr>
                         <tr>
                           <th>Cuentas por pagar</th>
@@ -150,31 +219,58 @@
                           <td>{{ ((year2.balanceGral.cuentasPorPagar - year1.balanceGral.cuentasPorPagar) / year1.balanceGral.cuentasPorPagar * 100).toFixed(2) }} %</td>
                         </tr>
                         <tr>
-                          <th>Documentos por pagar</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.docsPorPagar"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.docsPorPagar, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.docsPorPagar"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.docsPorPagar, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.docsPorPagar - year1.balanceGral.docsPorPagar }}</td>
-                          <td>{{ ((year2.balanceGral.docsPorPagar - year1.balanceGral.docsPorPagar) / year1.balanceGral.docsPorPagar * 100).toFixed(2) }} %</td>
-                        </tr>
-                        <tr>
-                          <th>Deudas con entidades de credito y obligaciones u otros valores negociables</th>
-                          <td><input type="text" size="6" v-model="year1.balanceGral.deudasEntidadesCredito"></td>
-                          <td>{{ analisisVertical(year1.balanceGral.deudasEntidadesCredito, computedYear1.balanceGral.totalActivos) }} % </td>
-                          <td><input type="text" size="6" v-model="year2.balanceGral.deudasEntidadesCredito"></td>
-                          <td>{{ analisisVertical(year2.balanceGral.deudasEntidadesCredito, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.deudasEntidadesCredito - year1.balanceGral.deudasEntidadesCredito }}</td>
-                          <td>{{ ((year2.balanceGral.deudasEntidadesCredito - year1.balanceGral.deudasEntidadesCredito) / year1.balanceGral.deudasEntidadesCredito * 100).toFixed(2) }} %</td>
-                        </tr>
-                        <tr>
                           <th>Otras cuentas por pagar</th>
                           <td><input type="text" size="6" v-model="year1.balanceGral.otrasCuentasPorPagar"></td>
                           <td>{{ analisisVertical(year1.balanceGral.otrasCuentasPorPagar, computedYear1.balanceGral.totalActivos) }} % </td>
                           <td><input type="text" size="6" v-model="year2.balanceGral.otrasCuentasPorPagar"></td>
                           <td>{{ analisisVertical(year2.balanceGral.otrasCuentasPorPagar, computedYear2.balanceGral.totalActivos) }} % </td>
-                          <td>{{ year2.balanceGral.otrasCuentasPorPagar - year1.balanceGral.otrasCuentasPorPagar }}</td>
+                          <td>{{ year2.balanceGral.otrasCuentasPorPagar - year1.balanceGral.otrasCuentasPorPagar}}</td>
                           <td>{{ ((year2.balanceGral.otrasCuentasPorPagar - year1.balanceGral.otrasCuentasPorPagar) / year1.balanceGral.otrasCuentasPorPagar * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Pasivo por arrendamientos</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.pasivosPorArrendamiento"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.pasivosPorArrendamiento, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.pasivosPorArrendamiento"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.pasivosPorArrendamiento, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.pasivosPorArrendamiento - year1.balanceGral.pasivosPorArrendamiento}}</td>
+                          <td>{{ ((year2.balanceGral.pasivosPorArrendamiento - year1.balanceGral.pasivosPorArrendamiento) / year1.balanceGral.pasivosPorArrendamiento * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Cuentas por pagar a partes relacionadas</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.cuentasPorPagaraPartesRelacionadas"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.cuentasPorPagaraPartesRelacionadas, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.cuentasPorPagaraPartesRelacionadas"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.cuentasPorPagaraPartesRelacionadas, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.cuentasPorPagaraPartesRelacionadas - year1.balanceGral.cuentasPorPagaraPartesRelacionadas}}</td>
+                          <td>{{ ((year2.balanceGral.cuentasPorPagaraPartesRelacionadas - year1.balanceGral.cuentasPorPagaraPartesRelacionadas) / year1.balanceGral.cuentasPorPagaraPartesRelacionadas * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Impuesto sobre la renta</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.impuestoSobreLaRenta"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.impuestoSobreLaRenta, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.impuestoSobreLaRenta"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.impuestoSobreLaRenta, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.impuestoSobreLaRenta - year1.balanceGral.impuestoSobreLaRenta}}</td>
+                          <td>{{ ((year2.balanceGral.impuestoSobreLaRenta - year1.balanceGral.impuestoSobreLaRenta) / year1.balanceGral.impuestoSobreLaRenta * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Participacion de los trabajadores en las utilidades</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades - year1.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades}}</td>
+                          <td>{{ ((year2.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades - year1.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades) / year1.balanceGral.participaciónDeLosTrabajadoresEnLasUtilidades * 100).toFixed(2) }} %</td>
+                        </tr>
+                        <tr>
+                          <th>Instrumentos financieros derivados</th>
+                          <td><input type="text" size="6" v-model="year1.balanceGral.instrumentosFinancierosDerivadosP"></td>
+                          <td>{{ analisisVertical(year1.balanceGral.instrumentosFinancierosDerivadosP, computedYear1.balanceGral.totalActivos) }} % </td>
+                          <td><input type="text" size="6" v-model="year2.balanceGral.instrumentosFinancierosDerivadosP"></td>
+                          <td>{{ analisisVertical(year2.balanceGral.instrumentosFinancierosDerivadosP, computedYear2.balanceGral.totalActivos) }} % </td>
+                          <td>{{ year2.balanceGral.instrumentosFinancierosDerivadosP - year1.balanceGral.instrumentosFinancierosDerivadosP}}</td>
+                          <td>{{ ((year2.balanceGral.instrumentosFinancierosDerivadosP - year1.balanceGral.instrumentosFinancierosDerivadosP) / year1.balanceGral.instrumentosFinancierosDerivadosP * 100).toFixed(2) }} %</td>
                         </tr>
                         <tr class="table-warning text-dark">
                           <th>Total pasivos corrientes</th>
