@@ -141,8 +141,7 @@ new Vue({
         parseInt(balanceGral.otrosActivosCorrientes) +
         parseInt(efectivoEInversionesCortoPlazo);
       let inmueblesMobiliarioYEquipoNeto =
-        balanceGral.inmueblesMobiliarioYEquipo -
-        balanceGral.depreciacionAcumuladaInmueblesMobiliarioYEquipo;
+       parseInt (balanceGral.inmueblesMobiliarioYEquipo);
       let totalActivos =
         parseInt(totalActivosCorrientes) +
         parseInt(inmueblesMobiliarioYEquipoNeto) +
