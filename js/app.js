@@ -81,8 +81,8 @@ new Vue({
 
       ER: {
 
-        ventasNetas: 265595,
-        costoVentas: 163756,
+        ventasNetas: 291926,
+        costoVentas: 138184,
 
         //Gastos generales
         distribucionVenta: 110234,
@@ -172,7 +172,7 @@ new Vue({
         parseInt(ER.gastosIntegracion) +
         parseInt(ER.otrosGastos) +
         parseInt(ER.distribucionVenta);
-      let utilidadOperacion = ER.beneficioBruto - gastosGenerales;
+      let utilidadOperacion = parseInt(beneficioBruto) - parseInt(gastosGenerales);
       let costoIntegral =
         parseInt(ER.interesesCargo) -
         parseInt(ER.interesesGanados) -
@@ -181,7 +181,7 @@ new Vue({
       let resultadoOrdinarioAntesImpuestos =
         parseInt(utilidadOperacion) +
         parseInt(ER.participacionCompanias) -
-        costoIntegral;
+        parseInt(costoIntegral);
       let utilidadNetaConsolidada =
         resultadoOrdinarioAntesImpuestos - ER.impuestoBeneficios;
 
@@ -283,7 +283,7 @@ new Vue({
           utilidadOperacion,
           resultadoOrdinarioAntesImpuestos,
           utilidadNetaConsolidada,
-          
+          costoIntegral
         },
 
         balanceGral: {
@@ -329,7 +329,7 @@ new Vue({
         parseInt(ER.gastosIntegracion) +
         parseInt(ER.otrosGastos) +
         parseInt(ER.distribucionVenta);
-      let utilidadOperacion = ER.beneficioBruto - gastosGenerales;
+      let utilidadOperacion = beneficioBruto - gastosGenerales;
       let costoIntegral =
         parseInt(ER.interesesCargo) -
         parseInt(ER.interesesGanados) +
@@ -441,7 +441,8 @@ new Vue({
           gastosGenerales,
           utilidadOperacion,
           resultadoOrdinarioAntesImpuestos,
-          utilidadNetaConsolidada,         
+          utilidadNetaConsolidada,
+          costoIntegral         
         },
 
         balanceGral: {

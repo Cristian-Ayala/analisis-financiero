@@ -494,52 +494,43 @@
                             <td>{{ ((computedYear2.ER.beneficioBruto - computedYear1.ER.beneficioBruto) / computedYear1.ER.beneficioBruto * 100).toFixed(2) }} %</td>
                           </tr>
                           <tr>
-                            <th>Gastos de personal</th>
-                            <td><input type="text" size="6" v-model="year1.ER.gastosPersonal"></td>
-                            <td>{{ analisisVertical(year1.ER.gastosPersonal, year1.ER.ventasNetas) }} % </td>
-                            <td><input type="text" size="6" v-model="year2.ER.gastosPersonal"></td>
-                            <td>{{ analisisVertical(year2.ER.gastosPersonal, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ (year2.ER.gastosPersonal - year1.ER.gastosPersonal) }}</td>
-                            <td>{{ ((year2.ER.gastosPersonal - year1.ER.gastosPersonal) / year1.ER.gastosPersonal * 100).toFixed(2) }} %</td>
+                            <th>Gastos Generales:</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                           </tr>
                           <tr>
-                            <th>I + D</th>
-                            <td><input type="text" size="6" v-model="year1.ER.investigacionDev"></td>
-                            <td>{{ analisisVertical(year1.ER.investigacionDev, year1.ER.ventasNetas) }} % </td>
-                            <td><input type="text" size="6" v-model="year2.ER.investigacionDev"></td>
-                            <td>{{ analisisVertical(year2.ER.investigacionDev, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ (year2.ER.investigacionDev - year1.ER.investigacionDev) }}</td>
-                            <td>{{ ((year2.ER.investigacionDev - year1.ER.investigacionDev) / year1.ER.investigacionDev * 100).toFixed(2) }} %</td>
-                          </tr>
-                          <tr class="table-warning text-dark">
-                            <th>Total gastos de explotacion</th>
-                            <td>{{ computedYear1.ER.gastosExplotacion }}</td>
-                            <td>{{ analisisVertical(computedYear1.ER.gastosExplotacion, year1.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.gastosExplotacion }}</td>
-                            <td>{{ analisisVertical(computedYear2.ER.gastosExplotacion, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.gastosExplotacion - computedYear1.ER.gastosExplotacion }}</td>
-                            <td>{{ ((computedYear2.ER.gastosExplotacion - computedYear1.ER.gastosExplotacion) / computedYear1.ER.gastosExplotacion * 100).toFixed(2) }} %</td>
-                          </tr>
-                          <tr class="table-secondary text-dark">
-                            <th>Resultados de explotacion</th>
-                            <td>{{ computedYear1.ER.resultadoExplotacion }}</td>
-                            <td>{{ analisisVertical(computedYear1.ER.resultadoExplotacion, year1.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.resultadoExplotacion }}</td>
-                            <td>{{ analisisVertical(computedYear2.ER.resultadoExplotacion, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.resultadoExplotacion - computedYear1.ER.resultadoExplotacion }}</td>
-                            <td>{{ ((computedYear2.ER.resultadoExplotacion - computedYear1.ER.resultadoExplotacion) / computedYear1.ER.resultadoExplotacion * 100).toFixed(2) }} %</td>
+                            <th>Distribucion y venta</th>
+                            <td><input type="text" size="6" v-model="year1.ER.distribucionVenta"></td>
+                            <td>{{ analisisVertical(year1.ER.distribucionVenta, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.distribucionVenta"></td>
+                            <td>{{ analisisVertical(year2.ER.distribucionVenta, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.distribucionVenta - year1.ER.distribucionVenta) }}</td>
+                            <td>{{ ((year2.ER.distribucionVenta - year1.ER.distribucionVenta) / year1.ER.distribucionVenta * 100).toFixed(2) }} %</td>
                           </tr>
                           <tr>
-                            <th>Ingresos financieros</th>
-                            <td><input type="text" size="6" v-model="year1.ER.ingresosFinancieros"></td>
-                            <td>{{ analisisVertical(year1.ER.ingresosFinancieros, year1.ER.ventasNetas) }} % </td>
-                            <td><input type="text" size="6" v-model="year2.ER.ingresosFinancieros"></td>
-                            <td>{{ analisisVertical(year2.ER.ingresosFinancieros, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ (year2.ER.ingresosFinancieros - year1.ER.ingresosFinancieros) }}</td>
-                            <td>{{ ((year2.ER.ingresosFinancieros - year1.ER.ingresosFinancieros) / year1.ER.ingresosFinancieros * 100).toFixed(2) }} %</td>
+                            <th>Administracion</th>
+                            <td><input type="text" size="6" v-model="year1.ER.administracion"></td>
+                            <td>{{ analisisVertical(year1.ER.administracion, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.administracion"></td>
+                            <td>{{ analisisVertical(year2.ER.administracion, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.administracion - year1.ER.administracion) }}</td>
+                            <td>{{ ((year2.ER.administracion - year1.ER.administracion) / year1.ER.administracion * 100).toFixed(2) }} %</td>
                           </tr>
                           <tr>
-                            <th>Otros gastos</th>
+                            <th>Gastos de integracion</th>
+                            <td><input type="text" size="6" v-model="year1.ER.gastosIntegracion"></td>
+                            <td>{{ analisisVertical(year1.ER.gastosIntegracion, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.gastosIntegracion"></td>
+                            <td>{{ analisisVertical(year2.ER.gastosIntegracion, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.gastosIntegracion - year1.ER.gastosIntegracion) }}</td>
+                            <td>{{ ((year2.ER.gastosIntegracion - year1.ER.gastosIntegracion) / year1.ER.gastosIntegracion * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr>
+                            <th>Otros gastos, neto</th>
                             <td><input type="text" size="6" v-model="year1.ER.otrosGastos"></td>
                             <td>{{ analisisVertical(year1.ER.otrosGastos, year1.ER.ventasNetas) }} % </td>
                             <td><input type="text" size="6" v-model="year2.ER.otrosGastos"></td>
@@ -547,8 +538,89 @@
                             <td>{{ (year2.ER.otrosGastos - year1.ER.otrosGastos) }}</td>
                             <td>{{ ((year2.ER.otrosGastos - year1.ER.otrosGastos) / year1.ER.otrosGastos * 100).toFixed(2) }} %</td>
                           </tr>
+                          <tr class="table-info text-dark">
+                            <th>Total gastos generales</th>
+                            <td>{{ computedYear1.ER.gastosGenerales }}</td>
+                            <td>{{ analisisVertical(computedYear1.ER.gastosGenerales, year1.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.gastosGenerales }}</td>
+                            <td>{{ analisisVertical(computedYear2.ER.gastosGenerales, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.gastosGenerales - computedYear1.ER.gastosGenerales }}</td>
+                            <td>{{ ((computedYear2.ER.gastosGenerales - computedYear1.ER.gastosGenerales) / computedYear1.ER.gastosGenerales * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr class="table-info text-dark">
+                            <th>Utilidad de operacion</th>
+                            <td>{{ computedYear1.ER.utilidadOperacion }}</td>
+                            <td>{{ analisisVertical(computedYear1.ER.utilidadOperacion, year1.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.utilidadOperacion }}</td>
+                            <td>{{ analisisVertical(computedYear2.ER.utilidadOperacion, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.utilidadOperacion - computedYear1.ER.utilidadOperacion }}</td>
+                            <td>{{ ((computedYear2.ER.utilidadOperacion - computedYear1.ER.utilidadOperacion) / computedYear1.ER.utilidadOperacion * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr>
+                            <th>Costo integral de financiamiento:</th>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                          </tr>                          
+                          <tr>
+                            <th>Intereses a cargo</th>
+                            <td><input type="text" size="6" v-model="year1.ER.interesesCargo"></td>
+                            <td>{{ analisisVertical(year1.ER.interesesCargo, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.interesesCargo"></td>
+                            <td>{{ analisisVertical(year2.ER.interesesCargo, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.interesesCargo - year1.ER.interesesCargo) }}</td>
+                            <td>{{ ((year2.ER.interesesCargo - year1.ER.interesesCargo) / year1.ER.interesesCargo * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr>
+                            <th>Intereses Ganados</th>
+                            <td><input type="text" size="6" v-model="year1.ER.interesesGanados">(-)</td>
+                            <td>{{ analisisVertical(year1.ER.interesesGanados, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.interesesGanados">(-)</td>
+                            <td>{{ analisisVertical(year2.ER.interesesGanados, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.interesesGanados - year1.ER.interesesGanados) }}</td>
+                            <td>{{ ((year2.ER.interesesGanados - year1.ER.interesesGanados) / year1.ER.interesesGanados * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr>
+                            <th>Perdida (Ganancia) cambiaria, neta</th>
+                            <td><input type="text" size="6" v-model="year1.ER.cambiariaNeta"></td>
+                            <td>{{ analisisVertical(year1.ER.cambiariaNeta, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.cambiariaNeta"></td>
+                            <td>{{ analisisVertical(year2.ER.cambiariaNeta, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.cambiariaNeta - year1.ER.cambiariaNeta) }}</td>
+                            <td>{{ ((year2.ER.cambiariaNeta - year1.ER.cambiariaNeta) / year1.ER.cambiariaNeta * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr>
+                            <th>Perdida (Ganacia) por posicion monetaria</th>
+                            <td><input type="text" size="6" v-model="year1.ER.posicionMonetaria"></td>
+                            <td>{{ analisisVertical(year1.ER.posicionMonetaria, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.posicionMonetaria"></td>
+                            <td>{{ analisisVertical(year2.ER.posicionMonetaria, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.posicionMonetaria - year1.ER.posicionMonetaria) }}</td>
+                            <td>{{ ((year2.ER.posicionMonetaria - year1.ER.posicionMonetaria) / year1.ER.posicionMonetaria * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr class="table-info text-dark">
+                            <th>Total costo integral de financiamiento</th>
+                            <td>{{ computedYear1.ER.costoIntegral }}</td>
+                            <td>{{ analisisVertical(computedYear1.ER.costoIntegral, year1.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.costoIntegral }}</td>
+                            <td>{{ analisisVertical(computedYear2.ER.costoIntegral, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.costoIntegral - computedYear1.ER.costoIntegral }}</td>
+                            <td>{{ ((computedYear2.ER.costoIntegral - computedYear1.ER.costoIntegral) / computedYear1.ER.costoIntegral * 100).toFixed(2) }} %</td>
+                          </tr>
+                          <tr>
+                            <th>Participacion en los resultados de companias asociadas</th>
+                            <td><input type="text" size="6" v-model="year1.ER.participacionCompanias"></td>
+                            <td>{{ analisisVertical(year1.ER.participacionCompanias, year1.ER.ventasNetas) }} % </td>
+                            <td><input type="text" size="6" v-model="year2.ER.participacionCompanias"></td>
+                            <td>{{ analisisVertical(year2.ER.participacionCompanias, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ (year2.ER.participacionCompanias - year1.ER.participacionCompanias) }}</td>
+                            <td>{{ ((year2.ER.participacionCompanias - year1.ER.participacionCompanias) / year1.ER.participacionCompanias * 100).toFixed(2) }} %</td>
+                          </tr>
                           <tr class="table-success text-dark">
-                            <th>Resultados ordinario antes de impuestos</th>
+                            <th>Utilidad antes de impuesto a la utilidad</th>
                             <td>{{ computedYear1.ER.resultadoOrdinarioAntesImpuestos }}</td>
                             <td>{{ analisisVertical(computedYear1.ER.resultadoOrdinarioAntesImpuestos, year1.ER.ventasNetas) }} % </td>
                             <td>{{ computedYear2.ER.resultadoOrdinarioAntesImpuestos }}</td>
@@ -557,40 +629,22 @@
                             <td>{{ ((computedYear2.ER.resultadoOrdinarioAntesImpuestos - computedYear1.ER.resultadoOrdinarioAntesImpuestos) / computedYear1.ER.resultadoOrdinarioAntesImpuestos * 100).toFixed(2) }} %</td>
                           </tr>
                           <tr>
-                            <th>Impuesto sobre beneficios</th>
+                            <th>Impuesto a la utilidad</th>
                             <td><input type="text" size="6" v-model="year1.ER.impuestoBeneficios"></td>
                             <td>{{ analisisVertical(year1.ER.impuestoBeneficios, year1.ER.ventasNetas) }} % </td>
                             <td><input type="text" size="6" v-model="year2.ER.impuestoBeneficios"></td>
                             <td>{{ analisisVertical(year2.ER.impuestoBeneficios, year2.ER.ventasNetas) }} % </td>
                             <td>{{ (year2.ER.impuestoBeneficios - year1.ER.impuestoBeneficios) }}</td>
                             <td>{{ ((year2.ER.impuestoBeneficios- year1.ER.impuestoBeneficios) / year1.ER.impuestoBeneficios * 100).toFixed(2) }} %</td>
-                          </tr>
-                          <tr class="table-primary text-dark">
-                            <th>Resultado procedente de operaciones continuadas</th>
-                            <td>{{ computedYear1.ER.resultadoOperacionesContinuadas }}</td>
-                            <td>{{ analisisVertical(computedYear1.ER.resultadoOperacionesContinuadas, year1.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.resultadoOperacionesContinuadas }}</td>
-                            <td>{{ analisisVertical(computedYear2.ER.resultadoOperacionesContinuadas, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.resultadoOperacionesContinuadas - computedYear1.ER.resultadoOperacionesContinuadas }}</td>
-                            <td>{{ ((computedYear2.ER.resultadoOperacionesContinuadas - computedYear1.ER.resultadoOperacionesContinuadas) / computedYear1.ER.resultadoOperacionesContinuadas * 100).toFixed(2) }} %</td>
-                          </tr>
-                          <tr>
-                            <th>Resultado de operaciones interrumpidas</th>
-                            <td><input type="text" size="6" v-model="year1.ER.resultadoOperacionesInterrumpidas"></td>
-                            <td>{{ analisisVertical(year1.ER.resultadoOperacionesInterrumpidas, year1.ER.ventasNetas) }} % </td>
-                            <td><input type="text" size="6" v-model="year2.ER.resultadoOperacionesInterrumpidas"></td>
-                            <td>{{ analisisVertical(year2.ER.resultadoOperacionesInterrumpidas, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ (year2.ER.resultadoOperacionesInterrumpidas - year1.ER.resultadoOperacionesInterrumpidas) }}</td>
-                            <td>{{ ((year2.ER.resultadoOperacionesInterrumpidas- year1.ER.resultadoOperacionesInterrumpidas) / year1.ER.resultadoOperacionesInterrumpidas * 100).toFixed(2) }} %</td>
-                          </tr>
+                          </tr>                          
                           <tr class="table-danger text-dark">
-                            <th>Resultado atribuido al grupo</th>
-                            <td>{{ computedYear1.ER.resultadoAtribuidoGrupo }}</td>
-                            <td>{{ analisisVertical(computedYear1.ER.resultadoAtribuidoGrupo, year1.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.resultadoAtribuidoGrupo }}</td>
-                            <td>{{ analisisVertical(computedYear2.ER.resultadoAtribuidoGrupo, year2.ER.ventasNetas) }} % </td>
-                            <td>{{ computedYear2.ER.resultadoAtribuidoGrupo - computedYear1.ER.resultadoAtribuidoGrupo }}</td>
-                            <td>{{ ((computedYear2.ER.resultadoAtribuidoGrupo - computedYear1.ER.resultadoAtribuidoGrupo) / computedYear1.ER.resultadoAtribuidoGrupo * 100).toFixed(2) }} %</td>
+                            <th>Utilidad neta consolidada</th>
+                            <td>{{ computedYear1.ER.utilidadNetaConsolidada }}</td>
+                            <td>{{ analisisVertical(computedYear1.ER.utilidadNetaConsolidada, year1.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.utilidadNetaConsolidada }}</td>
+                            <td>{{ analisisVertical(computedYear2.ER.utilidadNetaConsolidada, year2.ER.ventasNetas) }} % </td>
+                            <td>{{ computedYear2.ER.utilidadNetaConsolidada - computedYear1.ER.utilidadNetaConsolidada }}</td>
+                            <td>{{ ((computedYear2.ER.utilidadNetaConsolidada - computedYear1.ER.utilidadNetaConsolidada) / computedYear1.ER.utilidadNetaConsolidada * 100).toFixed(2) }} %</td>
                           </tr>
                         </tbody>
                       </table>
