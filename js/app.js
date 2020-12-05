@@ -7,18 +7,23 @@ new Vue({
       year: 2018,
 
       ER: {
-        ingresos: 229234,
-        consumosGastosExternos: 141048,
+        ventasNetas: 289320,
+        costoVentas: 135669,
 
-        gastosPersonal: 15261,
-        investigacionDev: 11581,
+        //Gastos
+        distribucionVenta: 109701,
+        administracion: 19006,
+        gastosIntegracion: 1855,
+        otrosGastos: 4580,
 
-        ingresosFinancieros: 2878,
-        otrosGastos: 133,
+        interesesCargo: 7668,
+        interesesGanados: 386,
+        cambiariaNeta: 85,
+        posicionMonetaria: 202,
+        participacionCompanias: 194,
 
-        impuestoBeneficios: 15738,
+        impuestoBeneficios: 4897,
 
-        resultadoOperacionesInterrumpidas: 0
       },
 
       balanceGral: {
@@ -75,18 +80,24 @@ new Vue({
       year: 2019,
 
       ER: {
-        ingresos: 265595,
-        consumosGastosExternos: 163756,
 
-        gastosPersonal: 16705,
-        investigacionDev: 14236,
+        ventasNetas: 265595,
+        costoVentas: 163756,
 
-        ingresosFinancieros: 2446,
-        otrosGastos: 441,
+        //Gastos generales
+        distribucionVenta: 110234,
+        administracion: 16641,
+        gastosIntegracion: 2435,
+        otrosGastos: 4013,
 
-        impuestoBeneficios: 11857,
+        interesesCargo: 8561,
+        interesesGanados: 560,
+        cambiariaNeta: 445,
+        posicionMonetaria: 114,
+        participacionCompanias: 249,
 
-        resultadoOperacionesInterrumpidas: 1515
+        impuestoBeneficios: 4733,
+
       },
 
       balanceGral: {
@@ -155,20 +166,24 @@ new Vue({
       //calculos de estado de resultados
       let ER = this.year1.ER;
 
-      let beneficioBruto = ER.ingresos - ER.consumosGastosExternos;
-      let gastosExplotacion =
-        parseInt(ER.gastosPersonal) +
-        parseInt(ER.investigacionDev) +
-        parseInt(ER.consumosGastosExternos);
-      let resultadoExplotacion = ER.ingresos - gastosExplotacion;
+      let beneficioBruto = ER.ventasNetas - ER.costoVentas;
+      let gastosGenerales =
+        parseInt(ER.administracion) +
+        parseInt(ER.gastosIntegracion) +
+        parseInt(ER.otrosGastos) +
+        parseInt(ER.distribucionVenta);
+      let utilidadOperacion = ER.beneficioBruto - gastosGenerales;
+      let costoIntegral =
+        parseInt(ER.interesesCargo) -
+        parseInt(ER.interesesGanados) -
+        parseInt(ER.cambiariaNeta) -
+        parseInt(ER.posicionMonetaria);
       let resultadoOrdinarioAntesImpuestos =
-        parseInt(resultadoExplotacion) +
-        parseInt(ER.ingresosFinancieros) -
-        ER.otrosGastos;
-      let resultadoOperacionesContinuadas =
+        parseInt(utilidadOperacion) +
+        parseInt(ER.participacionCompanias) -
+        costoIntegral;
+      let utilidadNetaConsolidada =
         resultadoOrdinarioAntesImpuestos - ER.impuestoBeneficios;
-      let resultadoAtribuidoGrupo =
-        resultadoOperacionesContinuadas - ER.resultadoOperacionesInterrumpidas;
 
       //calculos de balance general
       let balanceGral = this.year1.balanceGral;
@@ -242,20 +257,20 @@ new Vue({
       let pruebaAcida = ((totalActivosCorrientes - balanceGral.inventarios) / totalPasivosCorrientes).toFixed(2);
 
       //indices de actividad
-      let rotacionInventarios = (ER.consumosGastosExternos / balanceGral.inventarios).toFixed(2);
-      let ppc = (balanceGral.cuentasPorCobrar / (ER.ingresos / 365)).toFixed(2);
-      let ppp = (balanceGral.cuentasPorPagar / (ER.consumosGastosExternos / 365)).toFixed(2)
-      let rotacionActivosTotales = (ER.ingresos / totalActivos).toFixed(2);
+      let rotacionInventarios = (ER.costoVentas / balanceGral.inventarios).toFixed(2);
+      let ppc = (balanceGral.cuentasPorCobrar / (ER.ventasNetas / 365)).toFixed(2);
+      let ppp = (balanceGral.cuentasPorPagar / (ER.costoVentas / 365)).toFixed(2)
+      let rotacionActivosTotales = (ER.ventasNetas / totalActivos).toFixed(2);
 
       //indices de endeudamiento
       let indiceEndeudamiento = (totalPasivos / totalActivos).toFixed(2);
       let razonCargosInteresFijo = (resultadoOrdinarioAntesImpuestos / ER.impuestoBeneficios).toFixed(2);
 
       //indices de rentabilidad
-      let margenUtilidadBruta = (beneficioBruto / ER.ingresos).toFixed(2);
-      let margenUtilidadOperativa = (resultadoExplotacion / ER.ingresos).toFixed(2);
+      let margenUtilidadBruta = (beneficioBruto / ER.ventasNetas).toFixed(2);
+      let margenUtilidadOperativa = (utilidadOperacion / ER.ventasNetas).toFixed(2);
 
-      let margenUtilidadNeta = (resultadoAtribuidoGrupo / ER.ingresos).toFixed(2);
+      let margenUtilidadNeta = (utilidadNetaConsolidada / ER.ventasNetas).toFixed(2);
       let rsa = (margenUtilidadNeta * rotacionActivosTotales).toFixed(2); //rendimiento sobre activos totales
       let maf = (totalActivos / balanceGral.accionesComunes).toFixed(2); //multiplicador de apalancamiento financiero
       let rsp = (maf * rsa).toFixed(2); //rendimiento sobre patrimonio
@@ -264,17 +279,17 @@ new Vue({
       return {
         ER: {
           beneficioBruto,
-          gastosExplotacion,
-          resultadoExplotacion,
+          gastosGenerales,
+          utilidadOperacion,
           resultadoOrdinarioAntesImpuestos,
-          resultadoOperacionesContinuadas,
-          resultadoAtribuidoGrupo
+          utilidadNetaConsolidada,
+          
         },
 
         balanceGral: {
-          
+
           totalActivosCorrientes,
-          
+
           totalActivosFijos,
           totalActivos,
           totalPasivosCorrientes,
@@ -308,20 +323,24 @@ new Vue({
       //calculos de estado de resultados
       let ER = this.year2.ER;
 
-      let beneficioBruto = ER.ingresos - ER.consumosGastosExternos;
-      let gastosExplotacion =
-        parseInt(ER.gastosPersonal) +
-        parseInt(ER.investigacionDev) +
-        parseInt(ER.consumosGastosExternos);
-      let resultadoExplotacion = ER.ingresos - gastosExplotacion;
+      let beneficioBruto = ER.ventasNetas - ER.costoVentas;
+      let gastosGenerales =
+        parseInt(ER.administracion) +
+        parseInt(ER.gastosIntegracion) +
+        parseInt(ER.otrosGastos) +
+        parseInt(ER.distribucionVenta);
+      let utilidadOperacion = ER.beneficioBruto - gastosGenerales;
+      let costoIntegral =
+        parseInt(ER.interesesCargo) -
+        parseInt(ER.interesesGanados) +
+        parseInt(ER.cambiariaNeta) +
+        parseInt(ER.posicionMonetaria);
       let resultadoOrdinarioAntesImpuestos =
-        parseInt(resultadoExplotacion) +
-        parseInt(ER.ingresosFinancieros) -
-        ER.otrosGastos;
-      let resultadoOperacionesContinuadas =
+        parseInt(utilidadOperacion) +
+        parseInt(ER.participacionCompanias) -
+        costoIntegral;
+      let utilidadNetaConsolidada =
         resultadoOrdinarioAntesImpuestos - ER.impuestoBeneficios;
-      let resultadoAtribuidoGrupo =
-        resultadoOperacionesContinuadas - ER.resultadoOperacionesInterrumpidas;
 
       //calculos de balance general
       let balanceGral = this.year2.balanceGral;
@@ -336,7 +355,7 @@ new Vue({
         parseInt(balanceGral.depositosEnCuentas) +
         parseInt(balanceGral.activosClasificadosMantenidos);
       //let totalActivosNoCorrientes
-      let totalActivosFijos = 
+      let totalActivosFijos =
         parseInt(balanceGral.propiedadPlantaYEquipo) +
         parseInt(balanceGral.activosPorDerechodeUso) +
         parseInt(balanceGral.inversionEnAsociadas) +
@@ -362,7 +381,7 @@ new Vue({
         parseInt(balanceGral.instrumentosFinancierosDerivadosP);
 
       //let totalPasivosNoCorrientes = ;
-      let totalPasivosFijos = 
+      let totalPasivosFijos =
         parseInt(balanceGral.deudaLargoPlazo) +
         parseInt(balanceGral.pasivosPorArrendamientoNC) +
         parseInt(balanceGral.instrumentosFinancierosDerivadosNC) +
@@ -397,22 +416,20 @@ new Vue({
       let pruebaAcida = ((totalActivosCorrientes - balanceGral.inventarios) / totalPasivosCorrientes).toFixed(2);
 
       //indices de actividad
-      let rotacionInventarios = (ER.consumosGastosExternos / balanceGral.inventarios).toFixed(2);
-      let ppc = (balanceGral.cuentasPorCobrar / (ER.ingresos / 365)).toFixed(2);
-      let ppp = (balanceGral.cuentasPorPagar / (ER.consumosGastosExternos / 365)).toFixed(2)
-      let rotacionActivosTotales = (ER.ingresos / totalActivos).toFixed(2);
+      let rotacionInventarios = (ER.costoVentas / balanceGral.inventarios).toFixed(2);
+      let ppc = (balanceGral.cuentasPorCobrar / (ER.ventasNetas / 365)).toFixed(2);
+      let ppp = (balanceGral.cuentasPorPagar / (ER.costoVentas / 365)).toFixed(2)
+      let rotacionActivosTotales = (ER.ventasNetas / totalActivos).toFixed(2);
 
       //indices de endeudamiento
       let indiceEndeudamiento = (totalPasivos / totalActivos).toFixed(2);
       let razonCargosInteresFijo = (resultadoOrdinarioAntesImpuestos / ER.impuestoBeneficios).toFixed(2);
 
       //indices de rentabilidad
-      let margenUtilidadBruta = (beneficioBruto / ER.ingresos).toFixed(2);
-      let margenUtilidadOperativa = (resultadoExplotacion / ER.ingresos).toFixed(2);
+      let margenUtilidadBruta = (beneficioBruto / ER.ventasNetas).toFixed(2);
+      let margenUtilidadOperativa = (utilidadOperacion / ER.ventasNetas).toFixed(2);
 
-      let margenUtilidadNeta = (resultadoAtribuidoGrupo / ER.ingresos).toFixed(
-        2
-      );
+      let margenUtilidadNeta = (utilidadNetaConsolidada / ER.ventasNetas).toFixed(2);
       let rsa = (margenUtilidadNeta * rotacionActivosTotales).toFixed(2); //rendimiento sobre activos totales
       let maf = (totalActivos / balanceGral.accionesComunes).toFixed(2); //multiplicador de apalancamiento financiero
       let rsp = (maf * rsa).toFixed(2); //rendimiento sobre patrimonio
@@ -421,17 +438,16 @@ new Vue({
       return {
         ER: {
           beneficioBruto,
-          gastosExplotacion,
-          resultadoExplotacion,
+          gastosGenerales,
+          utilidadOperacion,
           resultadoOrdinarioAntesImpuestos,
-          resultadoOperacionesContinuadas,
-          resultadoAtribuidoGrupo
+          utilidadNetaConsolidada,         
         },
 
         balanceGral: {
-          
+
           totalActivosCorrientes,
-          
+
           totalActivosFijos,
           totalActivos,
           totalPasivosCorrientes,
