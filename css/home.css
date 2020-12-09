@@ -1,0 +1,209 @@
+/*--- GENERAL STYLES ---*/
+
+
+#Home h1,
+#Home h2,
+#Home h3,
+#Home h4,
+#Home h5,
+#Home h6 {
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.content-section{
+    padding-top: 2rem;
+}
+
+.content-section h1 {
+    color: #2d2d2d;
+    font-weight: 400;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.content-section h1:after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #2d2d2d;
+    padding-top: 3px;
+}
+
+.content-section p.lead {
+    font-family: 'Cardo', serif;
+    font-size: 19px;
+    line-height: 1.35em;
+    margin-bottom: 25px;
+}
+
+.content-section p.lead em {
+    font-size: 14px;
+}
+
+.content-section p em {
+    font-size: 14px;
+}
+
+.content-section p mark em {
+    font-size: inherit;
+}
+
+.content-section img.pull-right {
+    border: 1px solid #DFDFDF;
+    margin-top: 140px;
+}
+
+
+/*--- HOME ---*/
+#home {
+    text-align: center;
+    transition: width 0.5s, height 0.5s, transform 0.5s;
+
+}
+
+#home:hover{
+    transform: scale(1.1);
+}
+
+#home h1 {
+    font-family: 'Advent Pro', sans-serif;
+    font-size: 96px;
+    color: #000;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 90px;
+}
+
+#home h1:after {
+    border-bottom: 1px solid #AAA;
+}
+
+#home h5 {
+    font-size: 16px;
+    color: #555;
+}
+
+
+/*--- PORTFOLIO ---*/
+.content-section .thumbnail {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.content-section .thumbnail * {
+    transition: all .25s;
+}
+
+.content-section .thumbnail h4 {
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.content-section .thumbnail p {
+    line-height: 24px;
+}
+
+.content-section .thumbnail:hover h4,
+.content-section .thumbnail:hover p {
+    color: #AFAFAF;
+}
+
+.content-section .thumbnail:hover img {
+    opacity: 0.25;
+}
+
+.content-section .thumbnail:after {
+    font-family: 'FontAwesome';
+    content: '\f121';
+    color: #FFF;
+    font-size: 48px;
+    line-height: 80px;
+    top: 70%;
+    position: absolute;
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    transition: all .35s;
+    opacity: 0;
+    width: 86px;
+    height: 86px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 50%;
+    background: transparent;
+    border: 3px solid transparent;
+}
+
+.content-section .thumbnail:hover:after {
+    top: 25%;
+    opacity: 1;
+    color: #FFFFFF;
+    background: #AF6204;
+    border: 3px solid #FFFFFF;
+}
+
+/* ---------------------------------------- Inicio de creadores pag index.html------------------------------------- */
+
+
+.testimonial {
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    max-width: 100%;
+    width: 400px;
+    transform: scale(0.9);
+}
+
+.testimonial-body {
+    padding: 40px 40px 80px;
+}
+
+.testimonial-body p {
+    color: #555;
+    font-size: 20px;
+    line-height: 36px;
+    margin: 0;
+}
+
+.testimonial-body .fa-quote-right {
+    color: #eee;
+    font-size: 40px;
+    float: right;
+}
+
+.testimonial-footer {
+    background-color: #3c5e92;
+    color: #fff;
+    padding: 40px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+
+.testimonial-footer img {
+    border-radius: 50%;
+    border: 5px solid #fff;
+    height: 120px;
+    width: 120px;
+    margin-top: -100px;
+
+}
+
+.testimonial-footer h4 {
+    color: #ffffff;
+    margin: 15px 0 0 0 !important;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.divContainerCreadores {
+    display: flex;
+    margin-bottom: 1rem;
+    justify-content: space-around;
+}
+
+/* ---------------------------------------- Fin de creadores pag index.html------------------------------------- */
