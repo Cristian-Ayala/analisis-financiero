@@ -597,7 +597,7 @@
                           </tr>
                           <tr>
                             <th>Perdida (Ganancia) cambiaria, neta</th>
-                            <td><input type="text" size="6" v-model="year1.ER.cambiariaNeta"></td>
+                            <td><input type="text" size="6" v-model="year1.ER.cambiariaNeta">(-)</td>
                             <td>{{ analisisVertical(year1.ER.cambiariaNeta, year1.ER.ventasNetas) }} % </td>
                             <td><input type="text" size="6" v-model="year2.ER.cambiariaNeta"></td>
                             <td>{{ analisisVertical(year2.ER.cambiariaNeta, year2.ER.ventasNetas) }} % </td>
@@ -606,7 +606,7 @@
                           </tr>
                           <tr>
                             <th>Perdida (Ganacia) por posicion monetaria</th>
-                            <td><input type="text" size="6" v-model="year1.ER.posicionMonetaria"></td>
+                            <td><input type="text" size="6" v-model="year1.ER.posicionMonetaria">(-)</td>
                             <td>{{ analisisVertical(year1.ER.posicionMonetaria, year1.ER.ventasNetas) }} % </td>
                             <td><input type="text" size="6" v-model="year2.ER.posicionMonetaria"></td>
                             <td>{{ analisisVertical(year2.ER.posicionMonetaria, year2.ER.ventasNetas) }} % </td>
