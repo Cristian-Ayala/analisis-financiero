@@ -6091,6 +6091,7 @@ button.close {
   background-color: #007bff !important;
   background-image: linear-gradient(135deg, #7dadcc 0%, #afb0bd 100%);
   border: none;
+  transition: width 0.5s, height 0.5s, transform 0.5s;
 }
 
 a.bg-primary:hover, a.bg-primary:focus,
@@ -8985,6 +8986,9 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered th,
   .table-bordered td {
     border: 1px solid #ddd !important;
+  }
+  .card.text-white.bg-primary:hover {
+    transform: scale(1.05);
   }
 }
 /*# sourceMappingURL=bootstrap.css.map */
