@@ -8987,8 +8987,5 @@ a.text-dark:hover, a.text-dark:focus {
   .table-bordered td {
     border: 1px solid #ddd !important;
   }
-  .card.text-white.bg-primary:hover {
-    transform: scale(1.05);
-  }
 }
 /*# sourceMappingURL=bootstrap.css.map */

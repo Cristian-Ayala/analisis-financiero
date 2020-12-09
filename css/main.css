@@ -25,5 +25,7 @@ thead{
 }
 
 /* --------------------------------- NAV boder light fluctuating */
-
+.card.text-white.bg-primary:hover {
+    transform: scale(1.05);
+  }
  
