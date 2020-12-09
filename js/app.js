@@ -263,7 +263,7 @@ new Vue({
       let rotacionActivosTotales = (ER.ventasNetas / totalActivos).toFixed(2);
 
       //indices de endeudamiento
-      let indiceEndeudamiento = (totalPasivos / totalActivos).toFixed(2);
+      let indiceEndeudamiento = (totalPasivos / capitalContable).toFixed(2);
       let razonCargosInteresFijo = (resultadoOrdinarioAntesImpuestos / ER.impuestoBeneficios).toFixed(2);
 
       //indices de rentabilidad
@@ -422,7 +422,7 @@ new Vue({
       let rotacionActivosTotales = (ER.ventasNetas / totalActivos).toFixed(2);
 
       //indices de endeudamiento
-      let indiceEndeudamiento = (totalPasivos / totalActivos).toFixed(2);
+      let indiceEndeudamiento = (totalPasivos / capitalContable).toFixed(2);
       let razonCargosInteresFijo = (resultadoOrdinarioAntesImpuestos / ER.impuestoBeneficios).toFixed(2);
 
       //indices de rentabilidad
