@@ -272,7 +272,7 @@ new Vue({
 
       let margenUtilidadNeta = (utilidadNetaConsolidada / ER.ventasNetas).toFixed(2);
       let rsa = (margenUtilidadNeta * rotacionActivosTotales).toFixed(2); //rendimiento sobre activos totales
-      let maf = (totalActivos / capitalContable).toFixed(2); //multiplicador de apalancamiento financiero
+      let maf = (parseInt(totalActivos) / parseInt(capitalContable)).toFixed(2); //multiplicador de apalancamiento financiero
       let rsp = (maf * rsa).toFixed(2); //rendimiento sobre patrimonio
 
 
@@ -431,7 +431,7 @@ new Vue({
 
       let margenUtilidadNeta = (utilidadNetaConsolidada / ER.ventasNetas).toFixed(2);
       let rsa = (margenUtilidadNeta * rotacionActivosTotales).toFixed(2); //rendimiento sobre activos totales
-      let maf = (totalActivos / capitalContable).toFixed(2); //multiplicador de apalancamiento financiero
+      let maf = (parseInt(totalActivos) / parseInt(capitalContable)).toFixed(2); //multiplicador de apalancamiento financiero
       let rsp = (maf * rsa).toFixed(2); //rendimiento sobre patrimonio
 
 
